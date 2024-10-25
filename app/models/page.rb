@@ -15,6 +15,7 @@ class Page < ApplicationRecord
              when "not_exists"
               !scraper.present?(selector: selector)
              end
+             
     results.create(success: result)
   end
 end
