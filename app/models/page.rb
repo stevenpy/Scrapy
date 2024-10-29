@@ -1,5 +1,7 @@
 class Page < ApplicationRecord
   has_many :results
+  
+  validates :name, presence: true
   validates :url, presence: true
   validates :check_type, presence: true
   validates :selector, presence: true
@@ -15,7 +17,7 @@ class Page < ApplicationRecord
              when "not_exists"
               !scraper.present?(selector: selector)
              end
-             
+
     results.create(success: result)
   end
 end
