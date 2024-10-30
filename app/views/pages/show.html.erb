@@ -1,16 +1,19 @@
-<div class="mx-auto md:w-2/3 w-full flex">
-  <div class="mx-auto">
-    <% if notice.present? %>
-      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-    <% end %>
-
-    <%= render @page %>
-
-    <%= link_to "Edit this page", edit_page_path(@page), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to "Back to pages", pages_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= button_to "Destroy this page", @page, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
-    <%= button_to "Run check", page_check_path(@page), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
-    <h2>Results</h2>
-    <%= render @page.results.order(created_at: :desc) %>
+<div class="flex justify-between">
+  <h1 class="font-bold text-2xl truncate">
+    <%= link_to "<", root_path, class: "p-1 rounded hover:bg-gray-100" %>
+    <%= @page.name %>
+  </h1>
+  <div>
+    <div class="flex gap-1">
+      <%= button_to "Run", page_check_path(@page), class: "border border-gray-200 rounded shadow px-2 py-1 hover:bg-gray-100" %>
+      <%= link_to "Edit", edit_page_path(@page), class: "border border-gray-200 rounded shadow px-2 py-1 hover:bg-gray-100" %>
+    </div>
   </div>
+</div>
+
+<%= link_to @page.url, @page.url, class: "text-gray-7OO", target: :_blank %>
+
+<div class="mt-4">
+  <h2 class="font-medium">Results</h2>
+  <%= render @page.results.order(created_at: :desc) %>
 </div>

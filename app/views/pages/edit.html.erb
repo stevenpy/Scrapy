@@ -3,6 +3,7 @@
 
   <%= render "form", page: @page %>
 
+  <%= button_to "Destroy this page", @page, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
   <%= link_to "Show this page", @page, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   <%= link_to "Back to pages", pages_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 </div>
