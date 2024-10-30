@@ -1,4 +1,10 @@
 <%= link_to page, id: dom_id(page), class: "p-4 -mx-4 hover:bg-gray-100" do %>
-  <h4 class="font-bold"><%= page.name %></h4>
-  <div class="text-sm text-gray-700"><%= page.url %></div>
+  <div class="flex justify-between">
+    <div>
+      <h4 class="font-bold"><%= page.name %></h4>
+      <div class="text-sm text-gray-700"><%= page.url %></div>
+    </div>
+    
+    <%= render page.results.order(created_at: :desc).first %>
+  </div>
 <% end %>
