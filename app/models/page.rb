@@ -1,6 +1,7 @@
 class Page < ApplicationRecord
+  belongs_to :last_result, class_name: "Result"
   has_many :results
-  
+
   validates :name, presence: true
   validates :url, presence: true
   validates :check_type, presence: true
@@ -18,6 +19,7 @@ class Page < ApplicationRecord
               !scraper.present?(selector: selector)
              end
 
-    results.create(success: result)
+    result = results.create(success: result)
+    update(last_result: result)
   end
 end
