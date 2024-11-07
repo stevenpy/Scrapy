@@ -1,6 +1,6 @@
 class Page < ApplicationRecord
   belongs_to :last_result, class_name: "Result"
-  has_many :results
+  has_many :results, dependent: :destroy
 
   validates :name, presence: true
   validates :url, presence: true
