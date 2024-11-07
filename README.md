@@ -28,12 +28,6 @@ A Ruby on Rails application that monitors web pages for changes and notifies use
 ## 🚀 Getting Started
 
 1. Clone the repository
-2.```
-bundle install
-```
-3. ```
-rails db:create db:migrate
-```
-4. ```
-bin/dev
-```
+2. ``` bundle install ```
+3. ``` rails db:create db:migrate ```
+4. ``` bin/dev ```
