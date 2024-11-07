@@ -1,24 +1,39 @@
-# README
+# Web Page Monitor 🕵️‍♂️
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Ruby on Rails application that monitors web pages for changes and notifies users when updates occur. Built with modern technologies and a clean, responsive interface.
 
-Things you may want to cover:
+## 🌟 Features
 
-* Ruby version
+- **Page Monitoring**: Track changes on any web page
+- **Automated Checks**: Regular scanning of monitored pages
+- **Email Notifications**: Get instant alerts when changes are detected
+- **Clean Interface**: Modern UI built with Tailwind CSS
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
 
-* System dependencies
+## 🛠 Tech Stack
 
-* Configuration
+- Ruby on Rails
+- PostgreSQL
+- Tailwind CSS
+- Nokogiri (Web Scraping)
+- Action Mailer (Email Notifications)
 
-* Database creation
+## 📋 Prerequisites
 
-* Database initialization
+- Ruby 3.0.0 or higher
+- PostgreSQL
+- Node.js & Yarn
+- Redis (for background jobs)
 
-* How to run the test suite
+## 🚀 Getting Started
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Clone the repository
+2.```
+bundle install
+```
+3. ```
+rails db:create db:migrate
+```
+4. ```
+bin/dev
+```
